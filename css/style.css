@@ -1,0 +1,277 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px !important;
+    /* height: 100vh; */
+    /* margin: 0; */
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.23);
+    width: 100%;
+    margin: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* === title === */
+
+.container .title h1 {
+    width: fit-content;
+    text-align: center;
+    text-transform: capitalize;
+    color: #007bff;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container .title h1::after,
+.container .title h1::before {
+    content: "";
+    position: absolute;
+    border: 2px solid #c82333;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    transform: translateY(-50%);
+    display: flex;
+    width: 10px;
+    height: 10px;
+    background-color: #0056b3;
+    border-radius: 50%;
+}
+
+.container .title h1::after {
+    left: -20px;
+    top: 50%;
+}
+
+.container .title h1::before {
+    right: -20px;
+    top: 50%;
+}
+
+/* === form === */
+.container #studentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container #studentForm > .di > div {
+    display: flex;
+    align-items: center;
+}
+
+.container #studentForm > .di > div label {
+    width: 200px;
+}
+
+.container #studentForm > .di > div > .rad {
+    width: calc(100% - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.container #studentForm > div > label {
+    width: 200px;
+    display: block;
+}
+
+.container #studentForm > div input[type="text"],
+.container #studentForm > div input[type="number"] {
+    width: calc(100% - 200px);
+    padding: 10px;
+    /* margin-top: 5px; */
+    /* margin-bottom: 10px; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+    caret-color: #0056b3;
+}
+
+.container #studentForm > div > .department-err,
+.container #studentForm > div > .name-err,
+.container #studentForm > div > .grade-err {
+    width: 100%;
+    margin-bottom: 5px;
+    display: none;
+}
+
+.container #studentForm > div > .department-msg,
+.container #studentForm > div > .name-msg,
+.container #studentForm > div > .grade-msg {
+    color: #c82333;
+}
+
+.container #studentForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.5s all;
+}
+
+.container #studentForm button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* === controls === */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.controls div {
+    display: flex;
+    gap: 20px;
+}
+
+.controls div label {
+    width: 100px;
+}
+
+.controls div select {
+    /* margin-top: 20px; */
+    /* text-align: center; */
+    width: calc(100% - 100px);
+    font-size: 20px;
+}
+
+/* === table === */
+.container #studentsTable {
+    width: 100%;
+}
+
+.container #studentsTable table {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-top: 20px; */
+}
+
+.container #studentsTable table th,
+.container #studentsTable table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.container #studentsTable table th {
+    /* background-color: #f4f4f4; */
+    background-color: #dc3545;
+    color: #f4f4f4;
+}
+
+/* background-color: #f9f9f9;
+background-color: #fff; */
+
+.container #studentsTable table tr.sd {
+    background-color: #ffb7c4;
+}
+
+.container #studentsTable table tr.os {
+    background-color: #fffedd;
+}
+
+.container #studentsTable table tr.el {
+    background-color: #84d0f8;
+}
+
+/* 
+color: tr
+sd: #ffb7c4
+os: #fffedd
+el: #84d0f8
+*/
+
+.container #studentsTable table .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: 0.5s all;
+}
+
+.container #studentsTable table .delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* ==== */
+/* 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background: brown;
+    color: #fff;
+}
+
+.container table tbody tr:nth-child(even) {
+    background-color: #dbd6d5;
+}
+
+.check {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+}
+
+.textvalue-checked {
+    text-decoration: line-through;
+    color: rgba(0, 128, 0, 0.585);
+}
+
+.delete-btn {
+    display: block;
+    border: 2px solid #000;
+    font-size: 60px;
+    color: red;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.delete-btn:hover {
+    background-color: brown;
+    color: #fff;
+} */
